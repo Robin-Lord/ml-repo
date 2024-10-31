@@ -1,0 +1,41 @@
+{
+  "name": "Python Development Container",
+  "context": "..",
+  "dockerFile": "../Dockerfile",
+  "customizations": {
+      "settings": {
+        "python.pythonPath": "/usr/local/bin/python",
+        "python.linting.mypyEnabled": true,
+        "python.linting.enabled": true,
+        "python.analysis.typeCheckingMode": "basic",
+        "python.linting.mypyArgs": [
+          "--ignore-missing-imports",
+          "--follow-imports=silent",
+          "--show-column-numbers",
+          "--check-untyped-defs",
+          "--strict"
+        ],
+        "python.testing.unittestEnabled": true,
+        "python.testing.pytestEnabled": false,
+        "python.testing.unittestArgs": [
+          "-v",
+          "-s",
+          "./Tests",
+          "-p",
+          "test_*.py"
+        ]
+      }
+    },
+    "extensions": [
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "vivaxy.vscode-conventional-commits",
+      "ms-azuretools.vscode-docker",
+      "ms-python.black-formatter",
+      "elagil.pre-commit-helper",
+      "bierner.markdown-mermaid",
+      "ms-toolsai.jupyter"
+    ],
+  "postCreateCommand": "sh -c 'python -m pip install --no-cache-dir -r requirements.txt && pip install mypy && git config --unset-all core.hooksPath && pre-commit install || echo \"Command failed: $?\"'",
+  "remoteUser": "root"
+}
