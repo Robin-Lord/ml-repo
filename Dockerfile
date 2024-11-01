@@ -1,13 +1,15 @@
-# Start with a base image with Python
-FROM python:3.10-slim
+FROM python:3.11.9-slim
 
 # Set environment variables
 ENV POETRY_VERSION=1.4.0 \
-    POETRY_VIRTUALENVS_CREATE=false  
+    POETRY_VIRTUALENVS_CREATE=false
     # Installs in global site-packages
 
-# Install Poetry
-RUN pip install "poetry==$POETRY_VERSION"
+# Install Git and Poetry
+RUN apt-get update && \
+    apt-get install -y git && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip install "poetry==$POETRY_VERSION"
 
 # Set the working directory
 WORKDIR /app

@@ -5,6 +5,7 @@
   "customizations": {
       "settings": {
         "python.pythonPath": "/usr/local/bin/python",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
         "python.linting.mypyEnabled": true,
         "python.linting.enabled": true,
         "python.analysis.typeCheckingMode": "basic",
@@ -36,6 +37,6 @@
       "bierner.markdown-mermaid",
       "ms-toolsai.jupyter"
     ],
-  "postCreateCommand": "sh -c 'python -m pip install --no-cache-dir -r requirements.txt && pip install mypy && git config --unset-all core.hooksPath && pre-commit install || echo \"Command failed: $?\"'",
+  "postCreateCommand": "sh -c 'poetry install && poetry run pre-commit install || echo \"Command failed: $?\"'",
   "remoteUser": "root"
 }
