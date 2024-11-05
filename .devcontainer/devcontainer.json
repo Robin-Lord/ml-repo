@@ -4,6 +4,12 @@
   "dockerFile": "../Dockerfile",
   "customizations": {
       "settings": {
+
+        // To dynamically run latest code
+          "python.terminal.activateEnvironment": true,
+          "python.terminal.executeInFileDir": true,
+          "python.analysis.extraPaths": ["/app"],
+          "python.dockerContainer": "python_dev",
         "python.pythonPath": "/usr/local/bin/python",
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "python.linting.mypyEnabled": true,

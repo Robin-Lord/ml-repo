@@ -2,3 +2,4 @@ manual_model_building/__pycache__/__init__.cpython-311.pyc
 manual_model_building/utilities/__pycache__/generate_polynomials.cpython-311.pyc
 Tests/manual-model-building/utilities/__pycache__/test_generate_polynomials.cpython-311.pyc
 *.pyc
+.DS_Store

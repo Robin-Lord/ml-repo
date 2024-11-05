@@ -1,0 +1,7 @@
+{
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.terminal.executeInFileDir": true,
+    "python.analysis.extraPaths": ["/app"],
+    "python.dockerContainer": "python_dev"
+}
