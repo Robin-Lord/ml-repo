@@ -13,4 +13,8 @@ Collection of functions designed to help with initial data preparation and model
 Collection of simple hand-built models
 
 ### TODO:
-- [ ] Linear regression model
+- [X] Linear regression model
+    - [X] Add L2 and L1 regularisation
+- [ ] Simple logistic regression model
+    - [ ] Sigmoid estimator
+    - [ ] Log loss cost function
