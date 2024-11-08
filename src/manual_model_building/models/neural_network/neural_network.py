@@ -17,7 +17,7 @@ from ..base import BaseModel
 
 
 # Import activation functions
-from src.manual_model_building.utilities.activation_functions import sigmoid
+from src.manual_model_building.utilities.activation_functions import relu
 
 
 @dataclass
@@ -46,7 +46,9 @@ class NeuralNetworkLayer:
         self,
         number_of_neurons: int,
         number_of_inputs: int,
-        activation_function: Callable = sigmoid,
+        activation_function: Callable = relu,
+        # Relu is cheap and avoids too many flat parts of the chart so
+        # helps gradient descent to run faster
         random_state: int = 42,
     ):
         self.activation_function = activation_function
@@ -57,6 +59,19 @@ class NeuralNetworkLayer:
 
         Initialize weights and biases we should have one bias per neuron and
         one weight per input per neuron
+
+        Args:
+            number_of_neurons (int): Number of neurons in this layer
+            number_of_inputs (int): Number of inputs this layer accepts
+            activation_function (Callable): (default: relu) Activation function to process layer outputs
+                                            default is relu because it is cheap and avoids too many flat
+                                            parts of the chart so helps gradient descent to run faster,
+                                            for classification tasks, sigmoid is recommended for the output layer
+                                            and for regression tasks where the output could be negative, linear
+                                            is recommended (otherwise if it can only be positive, relu is
+                                            recommended)
+
+            random_state (int): (default: 42) Seed for reproducible weight initialization
 
         """
 
