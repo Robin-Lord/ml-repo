@@ -2,7 +2,7 @@ import unittest
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
 
-from manual_model_building.utilities import generate_polynomials
+from src.manual_model_building.utilities import generate_polynomials
 
 
 class TestPolynomialFeatures(unittest.TestCase):

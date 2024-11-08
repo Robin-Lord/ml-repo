@@ -34,5 +34,12 @@ Collection of hand-built machine learning models implemented from scratch.
   - Simple feedforward network
   - Backpropagation for gradient descent
 
+
+#### To Do:
+- Restructure model-building to be more modular
+- Add more tests
+- Add more documentation
+- Add more examples
+
 - 🚧 Generating Eigenvectors
   - Visualizing Eigenvectors of a covariance matrix

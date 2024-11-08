@@ -3,7 +3,7 @@ FROM python:3.11.9-slim
 # Set environment variables
 ENV POETRY_VERSION=1.4.0 \
     POETRY_VIRTUALENVS_CREATE=false \
-    PYTHONPATH="/app:${PYTHONPATH}"
+    PYTHONPATH="/app/src:${PYTHONPATH}"
     # Add to path so jupyter can import libraries
     # Installs in global site-packages
 

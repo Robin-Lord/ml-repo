@@ -8,7 +8,7 @@
         // To dynamically run latest code
           "python.terminal.activateEnvironment": true,
           "python.terminal.executeInFileDir": true,
-          "python.analysis.extraPaths": ["/app"],
+          "python.analysis.extraPaths": ["/app/src"],
           "python.dockerContainer": "python_dev",
         "python.pythonPath": "/usr/local/bin/python",
         "python.defaultInterpreterPath": "/usr/local/bin/python",
