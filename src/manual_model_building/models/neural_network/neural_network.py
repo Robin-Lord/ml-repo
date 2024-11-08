@@ -17,7 +17,7 @@ from ..base import BaseModel
 
 
 # Import activation functions
-from utilities.activation_functions import sigmoid
+from src.manual_model_building.utilities.activation_functions import sigmoid
 
 
 @dataclass
@@ -88,7 +88,7 @@ class NeuralNetworkLayer:
         self.last_input = inputs
 
         # Calculate the prediction
-        z = np.dot(self.weights, inputs) + self.biases
+        z = np.matmul(self.weights, inputs) + self.biases
 
         # Apply the activation function
         self.last_output = self.activation_function(z)
@@ -170,3 +170,10 @@ class NeuralNetwork(BaseModel):
         # expects the input data to be of shape
         # (number_of_features, batch_size)
         return self.forward_pass(X.T).T
+
+    def fit(self, X: np.ndarray, y: np.ndarray) -> None:
+        """
+        Fit the model to the data.
+        """
+        # TODO: Implement fit method
+        pass
