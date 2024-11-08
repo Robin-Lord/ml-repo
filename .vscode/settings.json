@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "utilities",
         "regression",
-        "src/experiments"
+        "src/experiments",
+        "neural-network"
     ]
 }

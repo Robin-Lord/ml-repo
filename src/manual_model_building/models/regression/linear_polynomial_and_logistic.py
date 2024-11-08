@@ -21,12 +21,17 @@ from typing import Tuple, List, Callable, Optional, Literal, Dict, cast
 from ...utilities import (
     generate_polynomials,
     regularisation as utilities_regularisation,
+    activation_functions as utilities_activation_functions,
 )
 from ...visualisation import training_visualisation
 
 
+# Build these modesl from the base class
+from ..base import BaseModel
+
+
 # Create class that will hold our model and data and handle predictions
-class LinearAndLogRegression:
+class LinearAndLogRegression(BaseModel):
     chosen_polynomial_function: Callable
     learning_rate: float
     n_iterations: int
@@ -41,6 +46,7 @@ class LinearAndLogRegression:
         polynomial_degree: int = 1,
         polynomial_funtion: Callable = generate_polynomials.scikit_learn_polynomial_features,
         regression_type: Literal["linear", "logistic"] = "linear",
+        **kwargs,
     ):
         """
         Initialise by establishing methods, don't set data yet so
@@ -66,6 +72,8 @@ class LinearAndLogRegression:
                                     for estimating continuous values and logistic is for estimating binary
                                     categories
         """
+
+        super().__init__(**kwargs)
 
         self.working_directory = working_directory
 
@@ -516,7 +524,7 @@ def logistic_gradient(
     prediction = X.dot(theta)
 
     # Put through sigmoid function to always between 0 and 1
-    prediction = 1 / (1 + np.exp(-prediction))
+    prediction = utilities_activation_functions.sigmoid(prediction)
 
     # Calculate the loss
     difference = prediction - y
