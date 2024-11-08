@@ -23,6 +23,25 @@ OUTPUT_DIRECTORY = f"{CURRENT_DIRECTORY}/visualisation"
 
 
 def run_for_gini():
+    """
+    Run polynomial regression visualization for US Gini Index data.
+
+    Fits a polynomial regression model (degree 2) to US Gini Index data from 1963-2022.
+    Creates three visualization variants:
+    1. Training progression with original data and axes
+    2. Training progression with final prediction only
+    3. Original data and final prediction only
+
+    The visualizations use a black background with white/gold styling to show:
+    - Model training progression
+    - Final polynomial fit
+    - Original data points
+
+    Model parameters:
+    - Polynomial degree: 2
+    - Learning rate: 0.05
+    - Training iterations: 500
+    """
     gini_index_data = gini_index.fetch_gini_index_data()
 
     # Separate data
@@ -86,6 +105,23 @@ def run_for_gini():
 
 
 def run_for_carbon():
+    """
+    Run polynomial regression visualization for global CO2 emissions data.
+
+    Fits a polynomial regression model (degree 3) to historical CO2 emissions data
+    and creates three visualization variants:
+    1. Training progression with final prediction and original data
+    2. Training progression with final prediction only
+    3. Training progression with original data only
+
+    The visualizations use a white background with black lines to emphasize the
+    emissions trend over time.
+
+    Model parameters:
+        - Polynomial degree: 3
+        - Learning rate: 0.005
+        - Training iterations: 1000
+    """
     X, y = owid_co2.fetch_global_co2_emissions_data()
 
     # Set polynomial degree to fit
@@ -145,6 +181,21 @@ def run_for_carbon():
 
 
 def run_for_life_expectancy():
+    """
+    Run polynomial regression visualization for global life expectancy data.
+
+    Fits a polynomial regression model (degree 2) to UN life expectancy data and creates
+    three visualization variants:
+    1. Training progression with original data and axes
+    2. Training progression only
+    3. Training progression with final prediction line
+
+    The visualizations show the model's evolution during training using red/white lines
+    on a black background. Training uses gradient descent with:
+    - Learning rate: 0.03
+    - Iterations: 1000
+    - No regularization (for aesthetic purposes)
+    """
     X, y = un_life_expectancy.fetch_life_expectancy_data()
 
     # Set polynomial degree to fit

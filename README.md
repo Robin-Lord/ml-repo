@@ -1,20 +1,38 @@
-# Purpose
+# Machine Learning Toolkit
 
-This is a general project to collate Machine Learning work, very much a work in progress.
+This is a general project to collate Machine Learning work, serving as a practical implementation reference.
 
-# Sections
+## Overview
 
-## ml-checklist
+This repository contains implementations of various machine learning algorithms and utilities, built from scratch for educational purposes.
 
-Collection of functions designed to help with initial data preparation and model setup. Designed to highlight some common considerations
+## Project Structure
 
-## model-building
+### ml-checklist
 
-Collection of simple hand-built models
+Collection of functions designed to help with initial data preparation and model setup. These utilities highlight common considerations in ML workflows:
+- Data validation
+- Feature preprocessing
+- Model evaluation setup
 
-### TODO:
-- [X] Linear regression model
-    - [X] Add L2 and L1 regularisation
-- [ ] Simple logistic regression model
-    - [ ] Sigmoid estimator
-    - [ ] Log loss cost function
+### model-building
+
+Collection of hand-built machine learning models implemented from scratch.
+
+#### Implemented Models:
+- ✅ Linear Regression
+  - With L1 (Lasso) regularization
+  - With L2 (Ridge) regularization
+- ✅ Logistic Regression
+  - Sigmoid activation function
+  - Log loss cost function implementation
+
+
+#### In Progress:
+
+- 🚧 Neural Networks
+  - Simple feedforward network
+  - Backpropagation for gradient descent
+
+- 🚧 Generating Eigenvectors
+  - Visualizing Eigenvectors of a covariance matrix
